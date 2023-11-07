@@ -3,4 +3,4 @@
 	url = https://github.com/trapd00r/LS_COLORS.git
 [submodule "nvim"]
 	path = nvim
-	url = https://github.com/zuidec/nvim.git
+	url = git@github.com:zuidec/nvim.git
