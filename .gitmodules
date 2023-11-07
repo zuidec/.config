@@ -1,0 +1,3 @@
+[submodule "bash/LS_COLORS"]
+	path = bash/LS_COLORS
+	url = https://github.com/trapd00r/LS_COLORS.git
