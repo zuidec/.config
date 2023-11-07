@@ -29,5 +29,5 @@ sudo apt-get install neovim
 
 Then, run the `nvim_config.sh` script from the .config/scripts directory 
 
-Once that is complete, run `nvim .` and once in NeoVIM, run `PackerSync`.  
+Once that is complete, run `nvim .` and once in NeoVIM, run `:PackerSync`.  
 The plugins should install.  
