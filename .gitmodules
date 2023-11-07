@@ -1,3 +1,6 @@
 [submodule "bash/LS_COLORS"]
 	path = bash/LS_COLORS
 	url = https://github.com/trapd00r/LS_COLORS.git
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/zuidec/nvim.git
