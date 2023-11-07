@@ -41,7 +41,7 @@ fi
 
 unset env
 
-# Shortcut to get to programming folder
+# Shortcut commands for using WSL
 programming()
 {
 	cd /mnt/c/Users/svens/Documents/Programming
@@ -54,6 +54,7 @@ documents()
 {
 	cd /mnt/c/Users/svens/Documents
 }
+
 # Get current git branch to add to PS1
 git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
