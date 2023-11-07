@@ -17,9 +17,13 @@ Ensure the following are installed on your machine:
 In Ubuntu, a sufficiently new version of NeoVIM may not be available without  
 building from source or adding an unstable repo:  
 
->`sudo add-apt-repository ppa:neovim-ppa/unstable
->sudo apt-get update
->sudo apt-get install neovim`  
+```
+
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+
+```
 
 ### Setup: 
 
