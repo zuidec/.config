@@ -1,0 +1,3 @@
+#!/bin/bash
+ln -s $PWD/firmware-loader.sh ~/bin/stloader
+ln -s $PWD/stdebug.sh ~/bin/stdebug
