@@ -4,6 +4,8 @@
 To set up bash configs, navigate to the .config/scripts directory and run  
 the `bash_config.sh` script.
 
+In your ~/.ssh/ folder should be a `ssh_key_list` file. Enter key names,  
+one per line into this file to be loaded at bash start.  
 
 # NeoVIM Configuration
 
