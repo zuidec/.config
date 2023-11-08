@@ -11,8 +11,8 @@
 # ridden in every subshell.
 
 test -s ~/.alias && . ~/.alias || true
-
-alias ls='ls --color=auto'
+alias ls='ls --color -h --group-directories-first'
+#alias ls='ls --color=auto'
 
 #
 # Set up ssh-agent and ssh-add whenever bash runs
