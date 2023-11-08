@@ -27,16 +27,22 @@ agent_start () {
 
 agent_load_env
 
+# Read the list of ssh keys to add to ssh-agent. 
+# Should be stored in ~/.ssh/ssh_key_list
+readarray -t ssh_keys < ~/.ssh/ssh_key_list
+
 # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
 agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
 if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
     agent_start
-    ssh-add
-    ssh-add /home/case/.ssh/valkyrie_key_ecdsa
+    for item in "${ssh_keys[@]}" 
+            do ssh-add $item 
+    done
 elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-    ssh-add
-    ssh-add /home/case/.ssh/valkyrie_key_ecdsa
+    for item in "${ssh_keys[@]}" 
+            do ssh-add $item 
+    done
 fi
 
 unset env
