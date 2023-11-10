@@ -11,7 +11,9 @@
 # ridden in every subshell.
 
 test -s ~/.alias && . ~/.alias || true
-alias ls='ls --color -h --group-directories-first'
+
+source ~/.config/bash/lscolors.sh
+alias ls='ls --color=auto --group-directories-first'
 #alias ls='ls --color=auto'
 
 #
@@ -144,4 +146,3 @@ On_IWhite='\e[0;107m'   # White
 
 PS1="(\D{%I:%M}) \[$BYellow\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
 
-source ~/.config/bash/LS_COLORS/lscolors.sh
