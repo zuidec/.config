@@ -15,7 +15,7 @@ test -s ~/.alias && . ~/.alias || true
 source ~/.config/bash/lscolors.sh
 alias ls='ls --color=auto --group-directories-first'
 #alias ls='ls --color=auto'
-
+if [ $(id -u) -ne 0 ]; then
 #
 # Set up ssh-agent and ssh-add whenever bash runs
 #
@@ -48,7 +48,7 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
 fi
 
 unset env
-
+fi
 # Shortcut commands for using WSL
 programming()
 {
@@ -146,6 +146,8 @@ On_IWhite='\e[0;107m'   # White
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PS1="(\D{%I:%M}) \[$BBlue\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
+elif [ $(id -u) -eq 0 ]; then
+	PS1="\[$BIRed\][\u@\h]:\w \[$IPurple\]\$(git_branch)\[$BIRed\]\$ \[$IWhite\]"
 else
     PS1="(\D{%I:%M}) \[$BYellow\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
 fi
