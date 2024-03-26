@@ -14,41 +14,44 @@ test -s ~/.alias && . ~/.alias || true
 
 source ~/.config/bash/lscolors.sh
 alias ls='ls --color=auto --group-directories-first'
-#alias ls='ls --color=auto'
+
 if [ $(id -u) -ne 0 ]; then
-#
-# Set up ssh-agent and ssh-add whenever bash runs
-#
-env=~/.ssh/agent.env
+{
+    #
+    # Set up ssh-agent and ssh-add whenever bash runs
+    #
+    env=~/.ssh/agent.env
 
-agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+    agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
 
-agent_start () {
-    (umask 077; ssh-agent >| "$env")
-    . "$env" >| /dev/null ; }
+    agent_start () {
+        (umask 077; ssh-agent >| "$env")
+        . "$env" >| /dev/null ; }
 
-agent_load_env
+    agent_load_env
 
-# Read the list of ssh keys to add to ssh-agent. 
-# Should be stored in ~/.ssh/ssh_key_list
-readarray -t ssh_keys < ~/.ssh/ssh_key_list
+    # Read the list of ssh keys to add to ssh-agent. 
+    # Should be stored in ~/.ssh/ssh_key_list
+    readarray -t ssh_keys < ~/.ssh/ssh_key_list
 
-# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
-agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+    # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+    agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
-if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-    agent_start
-    for item in "${ssh_keys[@]}" 
-            do ssh-add $item 
-    done
-elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
-    for item in "${ssh_keys[@]}" 
-            do ssh-add $item 
-    done
+    if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+        agent_start
+        for item in "${ssh_keys[@]}" 
+                do ssh-add $item 
+        done
+    elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+        for item in "${ssh_keys[@]}" 
+                do ssh-add $item 
+        done
+    fi
+
+    unset env
+}
 fi
 
-unset env
-fi
 # Shortcut commands for using WSL
 programming()
 {
