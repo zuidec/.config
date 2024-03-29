@@ -15,8 +15,6 @@ test -s ~/.alias && . ~/.alias || true
 source ~/.config/bash/lscolors.sh
 alias ls='ls --color=auto --group-directories-first'
 
-eval "$(fzf --bash)"
-
 if [ $(id -u) -ne 0 ]; then
 {
     #
@@ -157,3 +155,5 @@ else
     PS1="(\D{%I:%M}) \[$BYellow\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
 fi
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
