@@ -15,6 +15,8 @@ test -s ~/.alias && . ~/.alias || true
 source ~/.config/bash/lscolors.sh
 alias ls='ls --color=auto --group-directories-first'
 
+eval "$(fzf --bash)"
+
 if [ $(id -u) -ne 0 ]; then
 {
     #

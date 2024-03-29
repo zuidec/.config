@@ -8,6 +8,7 @@ sudo mv /root/.bashrc /root/.bashrc.old
 sudo cp -r /etc/skel/.config/bash/.bashrc /root/.bashrc
 sudo mkdir /root/.config
 sudo cp -r /etc/skel/.config/bash /root/.config/ 
+sudo apt install fzf
 
 mkdir ~/.ssh
 touch ~/.ssh/ssh_key_list

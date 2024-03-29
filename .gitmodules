@@ -5,3 +5,4 @@
 	path = nvim
 	url = git@github.com:zuidec/nvim.git
 	branch = main
+	update = rebase
