@@ -9,8 +9,9 @@ sudo cp -r /etc/skel/.config/bash/.bashrc /root/.bashrc
 sudo mkdir /root/.config
 sudo cp -r /etc/skel/.config/bash /root/.config/ 
 
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+sudo zypper in fzf
+#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+#~/.fzf/install
 
 mkdir ~/.ssh
 touch ~/.ssh/ssh_key_list
@@ -18,3 +19,4 @@ touch ~/.ssh/ssh_key_list
 echo "Bash configuration complete, update ssh key list located at"
 echo "~/.ssh/ssh_key_list"
 echo ""
+ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
