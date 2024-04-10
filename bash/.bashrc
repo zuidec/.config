@@ -148,11 +148,11 @@ On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    PS1="(\D{%I:%M}) \[$BBlue\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
+    PS1="\[$BBlue\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
 elif [ $(id -u) -eq 0 ]; then
 	PS1="\[$BIRed\][\u@\h]:\w \[$IPurple\]\$(git_branch)\[$BIRed\]\$ \[$IWhite\]"
 else
-    PS1="(\D{%I:%M}) \[$BYellow\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
+    PS1="\[$BYellow\][\u@\h]:\[$Cyan\]\w \[$ICyan\]\$(git_branch)\[$Cyan\]> \[$IWhite\]" 
 fi
 
 

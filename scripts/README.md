@@ -12,3 +12,10 @@ Use to clone packer, then remaining setup can be done through :PackerSync
 ### embedded/
     
 Utility scripts for ARM embedded development  
+
+### Utilities Commonly Used
+
+glow
+bat
+btop
+
