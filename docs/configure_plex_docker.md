@@ -1,0 +1,1 @@
+docker run -d --name=plex --network=host --restart unless-stopped -e PLEX_UID=1003 -e PLEX_GID=1005 -e TZ=America/LosAngeles -e VERSION=docker -e PLEX_CLAIM=claim-nYWcXYRF1sFDsv6Wbo4G -v /media/plex/plex_db:/config -v /media/plex/plex_tc:/transcode -v /media/plex/plex_media:/data plexinc/pms-docker
