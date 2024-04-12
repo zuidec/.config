@@ -1,5 +1,7 @@
 # This guide is a reference on how to set up OneDrive on a linux machine.
 
+-------------------------------------------------------------------------------
+
 1. Install rclone
     `sudo apt install rclone` or `sudo zypper in rclone`
 
@@ -8,7 +10,7 @@
 
 3. Choose New remote by entering 'n'
 
-```
+```bash
     >>>No remotes found, make a new one?
     n) New remote
     s) Set configuration password
@@ -48,7 +50,7 @@ should be listed as a current remote.
 
 18. The file should contain the following:
 
-```
+```bash
     [Unit]
     Description=OneDrive (rclone)
     AssertPathIsDirectory=%h/OneDrive
@@ -69,7 +71,7 @@ should be listed as a current remote.
 ```
 19. Reload the systemd daemons then enable the service:
 
-```
+```bash
     systemctl --user daemon-reload
     systemctl --user enable --now rclone-onedrive
 ```
