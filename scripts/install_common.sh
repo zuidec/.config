@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo zypper in glow bat btop
+sudo zypper in glow bat btop make
+
