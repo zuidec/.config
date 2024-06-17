@@ -18,10 +18,10 @@
 4. Then enter the following for the outgoing server:
 
 ```bash
-    Server Name: smtp.office.365.com
-    Port: 465
+    Server Name: smtp.office365.com
+    Port: 587
     User Name: 'YOUR@EMAIL.COM'
-    Connection security: SSL/TLS
+    Connection security: STARTTLS
     Authentication settings: OAuth2
 ```
 
