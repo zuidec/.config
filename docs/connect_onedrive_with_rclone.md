@@ -42,7 +42,7 @@ OneDrive account.
 14. If everything is okay, you should be back at the main screen and onedrive 
 should be listed as a current remote.
 
-15. Create a OneDrive directory `mkdir ~/OneDrive`
+15. Create a OneDrive directory `mkdir ~/Documents/OneDrive`
 
 16. Create a systemd user folder if none exists in `~/.config/systemd/user`
 
@@ -53,15 +53,15 @@ should be listed as a current remote.
 ```bash
     [Unit]
     Description=OneDrive (rclone)
-    AssertPathIsDirectory=%h/OneDrive
+    AssertPathIsDirectory=%h/Documents/OneDrive
     After=network.target
 
     [Service]
     Type=simple
 
-    ExecStart==/usr/bin/rclone --vfs-cache-mode writes mount OneDrive: OneDrive
+    ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount OneDrive: %h/Documents/OneDrive
 
-    ExecStop=/usr/bin/fusermount -zu %h/OneDrive
+    ExecStop=/usr/bin/fusermount -zu %h/Documents/OneDrive
 
     Restart=on-failure
     RestartSec=15
