@@ -1,8 +1,7 @@
-# Script to flash firmware to STM32 using ST-Link
 #!/bin/bash
+# Script to start GDB session to debug STM32 via ST-Link
 
 function usage() {
-
         scriptname=$(basename "$0")
         echo "Usage: $scriptname [-f firmware] -h "
         echo ""
@@ -31,9 +30,7 @@ do
         esac
 done
 
-echo "Writing $filename to ST-Link..."
+echo "Starting GDB with $filename"
+echo ""
 
-sudo st-info --probe
-sudo st-flash write $filename 0x80000000
-sudo st-flash reset
-
+sudo gdb-multiarch --tui $filename -ex 'target remote localhost:4242'

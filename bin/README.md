@@ -1,9 +1,5 @@
 ## Utility scripts for use with embedded ARM development
 
-### Setup
-
-Run `./create_symlinks` to create links to the scripts in ~/bin
-
 ### Utilities
 
 * **stloader** - Use to flash a .elf or .bin firmware via ST-Link debugger  

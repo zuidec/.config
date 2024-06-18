@@ -21,10 +21,10 @@ set -o vi
 [[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh
 
 # Source script to have fancy ls colors
-source ~/.config/bash/lscolors.sh
+source ~/.dotfiles/bash/lscolors.sh
 
 # Source script with convenience color defintions
-source ~/.config/bash/bash_colors.sh
+source ~/.dotfiles/bash/bash_colors.sh
 
 # Change ls command to color and group directories together
 alias ls='ls --color=auto --group-directories-first'
@@ -68,22 +68,6 @@ if [ $(id -u) -ne 0 ]; then
     unset env
 }
 fi
-
-###############################################################################
-# Shortcut commands for using WSL
-###############################################################################
-programming()
-{
-	cd /mnt/c/Users/svens/Documents/Programming
-}
-downloads()
-{
-	cd /mnt/c/Users/svens/Downloads
-}
-documents()
-{
-	cd /mnt/c/Users/svens/Documents
-}
 
 ###############################################################################
 # PS1 configuration

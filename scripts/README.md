@@ -15,7 +15,10 @@ Use to install commonly used utilities:
     - glow
     - bat
     - btop
+    - gcc
+    - g++
 
-### embedded/
-    
-Utility scripts for ARM embedded development  
+### install_rclone.sh
+
+Installs rclone then runs configurator, follow instructions from
+[[../docs/connect_onedrive_with_rclone.md|rclone instructions]]

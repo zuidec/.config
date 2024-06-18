@@ -1,7 +1,7 @@
 
 # Bash Configuration
 
-To set up bash configs, navigate to the .config/scripts directory and run  
+To set up bash configs, navigate to the .dotfiles/scripts directory and run  
 the `bash_config.sh` script.
 
 In your ~/.ssh/ folder should be a `ssh_key_list` file. Enter key names,  
@@ -29,7 +29,7 @@ sudo apt-get install neovim
 
 ### Setup: 
 
-Then, run the `nvim_config.sh` script from the .config/scripts directory 
+Then, run the `nvim_config.sh` script from the .dotfiles/scripts directory 
 
 Once that is complete, run `nvim .` and once in NeoVIM, run `:PackerSync`.  
 The plugins should install.  

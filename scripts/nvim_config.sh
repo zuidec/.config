@@ -15,3 +15,8 @@ sudo zypper in neovim nodejs xclip fd ripgrep
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+###############################################################################
+# Link nvim folder into .config
+###############################################################################
+
+ln -s ~/.dotfiles/nvim ~/.config/
